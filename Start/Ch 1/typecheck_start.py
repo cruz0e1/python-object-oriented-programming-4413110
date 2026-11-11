@@ -28,7 +28,8 @@ n2 = Newspaper("The New York Times")
 
 
 # TODO: use isinstance to compare a specific instance to a known type
-print(isinstance(b1,Book))
-print(isinstance(n1,Newspaper))
-print(isinstance(n1,Book))
-
+# print(isinstance(b1,Book))
+# print(isinstance(n1,Newspaper))
+# print(isinstance(n1,Book))
+print(isinstance(n2, object))
+print(isinstance(23, object))
