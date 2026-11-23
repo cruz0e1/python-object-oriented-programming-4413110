@@ -21,7 +21,7 @@ class Book:
             raise ValueError("Cannot compare Book with non-Book object")
         return self.price >= other.price
 
-    TODO: the __lt__ establishes < relationship with another obj
+    # TODO: the __lt__ establishes < relationship with another obj
     def __lt__(self, other):
         if not isinstance(other, Book):
             raise ValueError("Cannot compare Book with non-Book object")
@@ -45,3 +45,8 @@ print(b1 >= b3)
 print(b1 < b3) #throws error if lt is not defined
 
 # TODO: Now we can sort them too
+books = [b1, b2, b3, b4]
+books.sort()
+print("\n".join(f"{book.title} - ${book.price}" for book in books))
+
+
