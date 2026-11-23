@@ -4,13 +4,24 @@
 # Challenge: convert your classes to dataclasses
 # The subclasses are required to override the magic method
 # that makes them sortable
+import dataclasses
 
-class Asset():
-    pass
-    
-
+@dataclasses.dataclass
+class Asset:
+   def __init__(self, price: float, name: str = "Unknown"):
+      self.price = price
+      self.name = name
+       
+@dataclasses.dataclass
 class Stock(Asset):
-    pass
+    def __init__(self, price: float, name: str = "Unknown", ticker: str = "Unknown", company: str = "Unknown"):
+        super().__init__(price, name)
+        self.ticker = ticker
+        self.company = company        
+    
+    def __lt__(self, other):
+        return self.ticker < other.ticker
+
 
 
 class Bond(Asset):
